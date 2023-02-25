@@ -171,31 +171,4 @@ public class UserRepository implements IUserRepository {
         }
     }
 
-    public boolean buyProduct(User user, int balance) {
-        Connection connection = null;
-
-        try {
-            connection = db.getConnection();
-            PreparedStatement statement = connection.prepareStatement("update users set balance = balance - ? where ID = ?");
-            statement.setInt(1,user.getBalance() - balance);
-            statement.setInt(2, user.getId());
-            statement.execute();
-
-            user.setBalance(user.getBalance() - balance);
-
-            return true;
-        } catch (SQLException e) {
-            System.out.println("SQLException");
-            System.out.println(e.getMessage());
-            return false;
-        }
-        finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("SQLException");
-                System.out.println(e.getMessage());
-            }
-        }
-    }
 }

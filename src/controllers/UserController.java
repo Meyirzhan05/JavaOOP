@@ -58,8 +58,4 @@ public class UserController {
         return (toppedUp ? "Balance topped up" : "Balance didn't top up");
     }
 
-    public String buyProduct(User user, int balance) {
-        boolean bought = repo.topUpBalance(user, balance);
-        return (bought ? "Product has been succecfully bought." : "Product has not been bought.");
-    }
 }

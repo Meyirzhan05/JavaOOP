@@ -9,5 +9,4 @@ public interface IUserRepository {
     boolean increaseSellerBalance(int userId, int quantity);
     boolean createUser(User user);
     boolean topUpBalance(User user, int balance);
-    boolean buyProduct(User user, int balance);
 }

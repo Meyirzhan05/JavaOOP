@@ -38,6 +38,16 @@ public class ProductController {
         return productList;
     }
 
+    public void updateInfo(String name,int quantity){
+       if(repo.isAvailable(name)){
+           System.out.println(repo.UpdateAmount(name, quantity));
+
+       }
+       else{
+           System.out.println("Unfortunately, there is no such product in stock");
+       }
+    }
+
     public String addProduct(Product product){
         boolean created = repo.createProduct(product);
 
