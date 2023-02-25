@@ -1,5 +1,3 @@
-MEA's team
-
 Java Marketplace Console App
 
     - This is a Java-based console application for a simple marketplace where users can browse and purchase items. 
